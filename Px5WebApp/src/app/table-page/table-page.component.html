@@ -1,0 +1,53 @@
+<h1>Beispieltabelle</h1>
+<p>Ansicht einer responsiven Tabelle, dieses Element wird eher selten verwendet, aufgrund der schlechten Bedienbar- und Übersichtlichkeit auf Small Screens.</p>
+<div class="card">
+  <div class="card-body">
+    <div class="row">
+      <div class="col text-end">
+        <button type="button" class="btn btn-sm btn-primary"><i class="bi bi-plus-circle"></i> Hinzufügen</button>
+        <div ngbDropdown class="d-inline-block ms-1">
+          <button class="btn btn-sm btn-secondary" type="button" ngbDropdownToggle>
+            <i class="bi bi-three-dots-vertical"></i>
+          </button>
+          <ul ngbDropdownMenu>
+            <li><button type="button" ngbDropdownItem><i class="bi bi-sort-down"></i> Sortierung abwärts</button></li>
+            <li><button type="button" ngbDropdownItem><i class="bi bi-sort-up"></i> Sortierung aufwärts</button></li>
+            <li class="dropdown-divider"></li>
+            <li><button type="button" ngbDropdownItem><i class="bi bi-filter"></i> Filter</button></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-striped table-hover text-nowrap">
+        <thead>
+          <tr>
+            <th scope="col">Nummer</th>
+            <th scope="col">Vorname</th>
+            <th scope="col">Nachname</th>
+            <th scope="col">Strasse</th>
+            <th scope="col">PLZ</th>
+            <th scope="col">Ort</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of tableContent; let no = index">
+            <th scope="row">{{no + 1}}</th>
+            <td class="text-truncate">{{item.first}}</td>
+            <td class="text-truncate" [title]="item.last">{{item.last}}</td>
+            <td class="text-truncate">{{item.street}}</td>
+            <td class="text-truncate">{{item.plz}}</td>
+            <td class="text-truncate">{{item.city}}</td>
+            <td class="text-end">
+              <button type="button" class="btn btn-primary btn-sm me-1"><i class="bi bi-pencil"></i></button>
+              <button type="button" class="btn btn-secondary btn-sm me-1"><i class="bi bi-clipboard"></i></button>
+              <button type="button" class="btn btn-secondary btn-sm me-1"><i class="bi bi-clipboard-data"></i> mit Text</button>
+              <button type="button" class="btn btn-danger btn-sm"><i class="bi bi-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>

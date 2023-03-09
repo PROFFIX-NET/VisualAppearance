@@ -1,0 +1,36 @@
+/* Proffix Theme */
+$px5primaryblue: #28CDEE;
+$px5primaryblue60: #63D7F1;
+$px5gray30: #C6C6C6;
+$px5gray10: #EDEDED;
+$primary: $px5primaryblue;
+$secondary: $px5gray30;
+$body-bg: $px5gray10;
+
+/* Bootstrap import */
+@import "bootstrap/scss/bootstrap";
+@import 'bootstrap-icons/font/bootstrap-icons.css';
+
+/* Navbar Customizing */
+.logo {
+  height: 30px;
+}
+
+nav.navbar {
+  background-color: $px5primaryblue60;
+}
+
+.navbar-toggler {
+  border: none;
+  padding: 0;
+
+  &:focus {
+    box-shadow: none; // Remove default navbar active focus border
+  }
+}
+
+@include media-breakpoint-up(md) {
+  .usermenu {
+    order: 3;
+  }
+}

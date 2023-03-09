@@ -1,0 +1,36 @@
+<h1>Beispiel Cards</h1>
+<p>Damit die Anzeige responsive bleibt, bieten sich Cards als universelles Element an. Häufig werden wir diese auch einspaltig verwenden (siehe weiter unten).</p>
+<div class="row row-cols-1 row-cols-sm-2 row-cols-md-3 row-cols-lg-4">
+  <div class="col mb-3" *ngFor="let item of tableContent; let no = index">
+    <div class="card">
+      <img src="./assets/{{pics | randomPic}}" class=" card-img-top" alt="">
+      <div class="card-body">
+        <h5 class="card-title">{{item.first}} {{item.last}}</h5>
+        <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Officia quo alias repellat ipsam doloribus, temporibus enim error culpa, qui voluptates libero earum iste cum similique iure ea vitae! Accusantium, architecto!</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Inhalt einer Auflistung</li>
+        <li class="list-group-item">{{item.street}}</li>
+        <li class="list-group-item">{{item.plz}} {{item.city}}</li>
+      </ul>
+      <div class="card-body">
+        <p class="card-text"></p>
+        <button type="button" class="btn btn-primary"><i class="bi bi-balloon-heart"></i></button>
+        <button type="button" class="btn btn-secondary ms-1"><i class="bi bi-emoji-smile"></i></button>
+      </div>
+    </div>
+  </div>
+</div>
+<h2 id="onecolcards">Einspaltige Cards</h2>
+<p>Die Art des Contents und die Gestaltungsmöglichkeit sind vielfältig: <a href="https://getbootstrap.com/docs/5.3/components/card/" target="_blank">Bootstrap Docs</a></p>
+<div class="row row-cols-1">
+  <div class="col mb-3" *ngFor="let item of tableContent; let no = index">
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">{{item.first}} {{item.last}}</h5>
+        <p class="card-text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis amet possimus dolores earum, voluptates, dicta id vitae quam eos velit aspernatur? Recusandae corrupti quos explicabo itaque excepturi nesciunt esse nisi!</p>
+        <button type="button" class="btn btn-primary">Go somewhere</button>
+      </div>
+    </div>
+  </div>
+</div>
